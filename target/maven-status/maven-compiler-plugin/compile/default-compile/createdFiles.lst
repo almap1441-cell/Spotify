@@ -1,0 +1,6 @@
+spotify\Podcast.class
+spotify\Cancion.class
+spotify\Contenido.class
+spotifyApp\Spotify.class
+spotifyGestion\Playlist.class
+spotify\Usuario.class
