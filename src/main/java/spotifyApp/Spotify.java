@@ -20,6 +20,7 @@ import spotify.metodosm;
 public class Spotify {
 
     public static void main(String[] args) {
+        // se realizo la reduccion del menu para evitar que se 
 
         // creamos el objeto Scanner
         Scanner sc = new Scanner(System.in);
