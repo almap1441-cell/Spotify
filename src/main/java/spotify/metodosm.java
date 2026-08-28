@@ -174,10 +174,6 @@ public class metodosm {
         if (!encontrado) {
             System.out.println("No existe un contenido con ese ID.");
         }
-    }
-    
-    
-    
+    }   
 }
     
-

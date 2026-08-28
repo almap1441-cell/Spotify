@@ -20,14 +20,44 @@ import spotify.metodosm;
 public class Spotify {
 
     public static void main(String[] args) {
-        // se realizo la reduccion del menu para evitar que se 
+        // se realizo la reduccion del menu para evitar que se confundan y sea mas facil de leer
 
         // creamos el objeto Scanner
         Scanner sc = new Scanner(System.in);
 
         // creamos un objeto de tipo Usuario
         // el propietario de la playlist
-        Usuario usuario = new Usuario("Alma", "Premium");
+        System.out.println("Bienvenido a spotify web");
+        System.out.println("Porfavor ingresar el usuario y el tipo de cuenta");
+        System.out.println("Ingresa el usuario");
+        String nombre;
+        do {
+            System.out.print("Ingresar un usuario valido: ");
+            nombre = sc.nextLine();
+
+            if (nombre.trim().isEmpty()) {
+                System.out.println("Error: el usuario no puede quedar vacio.");
+            }
+        } while (nombre.trim().isEmpty());
+
+        System.out.println("Usuario valido : " + nombre);
+        
+        String tipo;
+        
+        System.out.println("Ingresa tipo de cuenta");
+        
+        do {
+            System.out.print("Ingresar el tipo de cuenta: ");
+            tipo = sc.nextLine();
+
+            if (nombre.trim().isEmpty()) {
+                System.out.println("Error: el tipo de cuenta no puede quedar vacio.");
+            }
+        } while (nombre.trim().isEmpty());
+
+        System.out.println("Tipo de cuenta valido : " + tipo);
+        
+        Usuario usuario = new Usuario(nombre, tipo );
 
         // creamos una playlist y le asignamos un nombre y un usuario
         Playlist playlist = new Playlist("Mis Favoritas", usuario);

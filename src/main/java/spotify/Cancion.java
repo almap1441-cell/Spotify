@@ -11,6 +11,7 @@ package spotify;
 
 // la clase cancion hereda de la clase Contenido
 public class Cancion extends Contenido {
+    // las clases hijas tiene muy buena estructura y orden estas no se modifican
 
     // variable para guardar el nombre del artista
     private String artista;
