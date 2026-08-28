@@ -113,6 +113,70 @@ public class metodosm {
         }
     }
     // aca seria el metodo 4
+    // Método estático para recorrer y reproducir todos los contenidos
+    public static void reproducirTodo(Playlist playlist) {
+        
+        // Verificamos si la playlist tiene contenidos
+        if (playlist.getContadorContenidos() == 0) {
+            System.out.println("No hay contenidos para reproducir.");
+        } else {
+            System.out.println("\nReproduciendo playlist...\n");
+
+            // Obtenemos el arreglo de contenidos
+            Contenido[] lista = playlist.getContenidos();
+
+            // Recorremos todos los elementos registrados
+            for (int i = 0; i < playlist.getContadorContenidos(); i++) {
+                System.out.println("ID: " + lista[i].getIdContenido());
+                lista[i].reproducir();
+            }
+        }
+    }
+    // aca el metodo 5 del menu para la restructuracion del menu 
+    // Método estático para buscar y reproducir un elemento según su ID
+    public static void reproducirPorId(Scanner sc, Playlist playlist) {
+        
+        // Verificamos si la playlist está vacía
+        if (playlist.getContadorContenidos() == 0) {
+            System.out.println("La playlist está vacía.");
+            return;
+        }
+
+        // Validamos que el usuario ingrese un número entero para el ID
+        int id;
+        while (true) {
+            System.out.print("Ingrese el ID del contenido: ");
+            if (sc.hasNextInt()) {
+                id = sc.nextInt();
+                sc.nextLine(); // Limpiamos el buffer
+                break;
+            } else {
+                System.out.println("Error: Ingrese un ID numérico válido.");
+                sc.nextLine(); // Eliminamos el dato incorrecto
+            }
+        }
+
+        // Buscamos el contenido en el arreglo
+        Contenido[] lista = playlist.getContenidos();
+        boolean encontrado = false;
+
+        for (int i = 0; i < playlist.getContadorContenidos(); i++) {
+            if (lista[i].getIdContenido() == id) {
+                System.out.println("\nContenido encontrado:");
+                System.out.println(lista[i]);
+                lista[i].reproducir();
+                encontrado = true;
+                break;
+            }
+        }
+
+        // Si terminó el ciclo y no encontró el ID
+        if (!encontrado) {
+            System.out.println("No existe un contenido con ese ID.");
+        }
+    }
+    
+    
     
 }
     
