@@ -12,10 +12,6 @@ import spotifyGestion.Playlist;
  * @author Avi Cervantes
  */
 public class metodosm {
-
-
-    // 1. Modificadores en orden correcto: public static void
-    // 2. Recibe por parámetro el Scanner y la Playlist requeridos
     public static void agregarCancion(Scanner sc, Playlist playlist) {
         
         System.out.print("Título: ");
